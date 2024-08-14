@@ -1,6 +1,4 @@
 body {
-    background-image: url('https://github.com/persinha/persinha/blob/main/fundo%20habbo.gif');
-    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: repeat; /* Evita repetição da imagem */
+    background-image: url('https://github.com/persinha/persinha/blob/main/fundo%20habbo.gif?raw=true');
+    background-repeat: repeat; /* Repete a imagem em ambas as direções */
 }
