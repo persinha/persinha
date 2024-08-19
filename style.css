@@ -1,51 +1,80 @@
+/* Configurações globais */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-image: url('https://raw.githubusercontent.com/persinha/persinha/main/fundo%20habbo.gif?raw=true');
+    background-image: url('https://github.com/persinha/persinha/blob/main/fundo%20habbo.gif?raw=true');
     background-repeat: repeat; /* Repete a imagem em ambas as direções */
+    background-attachment: scroll; /* Fixa a imagem no fundo ao rolar a página */
     background-color: #f4f4f4;
 }
 
+/* Cabeçalho e menu de navegação */
 header {
     background: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
     font-size: 2em;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
+/* Estilo dos botões no menu */
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: 2px solid #ffcc00; /* Adiciona uma borda inicial */
+    border-radius: 5px;
+    background-color: transparent; /* Fundo transparente inicialmente */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
+nav ul li a:hover {
+    background-color: #ffcc00; /* Cor de fundo mais intensa ao passar o mouse */
+    color: #333; /* Muda a cor do texto */
+    border-color: #333; /* Muda a cor da borda */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais evidente */
+}
+
+/* Estrutura do conteúdo principal */
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 80px 20px 20px; /* Ajuste o padding superior para compensar o menu fixo */
 }
 
+/* Barra lateral */
 aside {
     width: 25%;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 aside h2 {
@@ -64,21 +93,62 @@ aside ul li {
 aside ul li a {
     text-decoration: none;
     color: #333;
+    transition: color 0.3s ease;
 }
 
+aside ul li a:hover {
+    color: #ff0090;
+}
+
+/* Seção principal do conteúdo */
 main {
     width: 70%;
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+main article h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+main article p {
+    font-size: 1em;
+    color: #666;
 }
 
 main article img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo de botões específicos */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff0090;
+    border: 2px solid #ff0090;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333; /* Cor de fundo ao passar o mouse */
+    color: #ff0090; /* Muda a cor do texto */
+    border-color: #ff0090; /* Mantém a cor da borda */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais evidente */
+}
+
+/* Rodapé */
 footer {
     background: #333;
     color: #fff;
@@ -87,4 +157,60 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 100px 10px 10px; /* Compensar o menu fixo */
+    }
+
+    aside, main {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    footer {
+        position: static;
+        padding: 20px;
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin: 3px 0;
+    }
+
+    aside h2 {
+        font-size: 1.5em;
+    }
+
+    main article h2 {
+        font-size: 1.5em;
+    }
+
+    main article p {
+        font-size: 0.9em;
+    }
 }
